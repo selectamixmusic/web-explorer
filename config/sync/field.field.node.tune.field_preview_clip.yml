@@ -1,0 +1,27 @@
+uuid: 90513846-2125-4ba5-9be4-0855225b550d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_preview_clip
+    - node.type.tune
+  module:
+    - file
+id: node.tune.field_preview_clip
+field_name: field_preview_clip
+entity_type: node
+bundle: tune
+label: 'Preview clip'
+description: 'Short excerpt played from the network explorer.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: selectamix/previews
+  file_extensions: 'mp3 wav flac ogg m4a aac'
+  max_filesize: ''
+  description_field: false
+field_type: file

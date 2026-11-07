@@ -1,0 +1,11 @@
+uuid: 6153b91c-0244-4d56-9e7e-cb5ccf6c0487
+langcode: en
+status: true
+dependencies: {  }
+name: 'Mix connection'
+type: mix_connection
+description: 'A directed, human-curated mix from an outgoing tune into an incoming tune.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

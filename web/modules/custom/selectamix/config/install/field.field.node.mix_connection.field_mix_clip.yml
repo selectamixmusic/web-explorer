@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_mix_clip
+    - node.type.mix_connection
+  module:
+    - file
+id: node.mix_connection.field_mix_clip
+field_name: field_mix_clip
+entity_type: node
+bundle: mix_connection
+label: 'Mix clip'
+description: 'Optional pre-rendered excerpt of the blend.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: selectamix/mixclips
+  file_extensions: 'mp3 wav flac ogg m4a aac'
+  max_filesize: ''
+  description_field: false
+field_type: file

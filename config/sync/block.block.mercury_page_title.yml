@@ -1,0 +1,20 @@
+uuid: 8f4ca5a8-8a03-4575-be58-f2097fcd6b56
+langcode: en
+status: false
+dependencies:
+  theme:
+    - mercury
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: mercury_page_title
+theme: mercury
+region: content
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

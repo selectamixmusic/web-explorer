@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_bpm
+    - node.type.tune
+id: node.tune.field_bpm
+field_name: field_bpm
+entity_type: node
+bundle: tune
+label: BPM
+description: 'Tempo in beats per minute.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

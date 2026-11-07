@@ -134,3 +134,6 @@ out/
 
 /.editorconfig
 /.gitattributes
+
+# Server access notes and other secrets, never committed.
+docs/private/

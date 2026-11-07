@@ -1,0 +1,19 @@
+uuid: d60843ce-3748-4bd4-906f-672f87b3ba28
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_version
+    - node.type.tune
+id: node.tune.field_version
+field_name: field_version
+entity_type: node
+bundle: tune
+label: Version
+description: 'Radio edit, extended mix, remix name. A different version is a different tune.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

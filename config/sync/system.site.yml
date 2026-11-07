@@ -1,0 +1,15 @@
+_core:
+  default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
+langcode: en
+uuid: 8083ad2b-2385-45aa-a451-3b737de02bab
+name: 'Selectamix Music'
+mail: admin@example.com
+slogan: 'Tunes as a network: see how they mix'
+page:
+  403: ''
+  404: ''
+  front: /mix-network
+admin_compact_mode: false
+weight_select_max: 100
+default_langcode: en
+mail_notification: null

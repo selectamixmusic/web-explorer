@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mix_route.field_connections
+    - field.field.node.mix_route.field_notes
+    - node.type.mix_route
+  module:
+    - text
+    - user
+id: node.mix_route.default
+targetEntityType: node
+bundle: mix_route
+mode: default
+content:
+  field_connections:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  field_notes:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,20 @@
+uuid: 1a32039e-df5e-443f-8f17-920ef4275fa4
+langcode: en
+status: true
+dependencies:
+  module:
+    - selectamix
+  theme:
+    - mercury
+id: mercury_selectamix_navbar
+theme: mercury
+region: header
+weight: -10
+provider: null
+plugin: selectamix_navbar
+settings:
+  id: selectamix_navbar
+  label: 'Selectamix navbar'
+  label_display: '0'
+  provider: selectamix
+visibility: {  }

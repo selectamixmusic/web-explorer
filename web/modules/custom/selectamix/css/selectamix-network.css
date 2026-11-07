@@ -1,0 +1,182 @@
+.selectamix {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 60em) {
+  .selectamix {
+    grid-template-columns: 1fr;
+  }
+}
+.selectamix__graph {
+  min-height: 36rem;
+  border: 1px solid #d4d4d8;
+  border-radius: 0.5rem;
+  background: #fafafa;
+}
+.selectamix__panel {
+  font-size: 0.95rem;
+}
+.selectamix__heading {
+  margin-top: 0;
+}
+.selectamix__hint,
+.selectamix__stats {
+  color: #52525b;
+}
+.selectamix__route {
+  list-style: none;
+  counter-reset: tune;
+  padding-left: 1.75rem;
+}
+.selectamix__route li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.selectamix__route li:not(.selectamix__segue) {
+  counter-increment: tune;
+}
+.selectamix__route li:not(.selectamix__segue)::before {
+  content: counter(tune) ".";
+  position: absolute;
+  left: -1.75rem;
+  width: 1.25rem;
+  text-align: right;
+  font-weight: 600;
+}
+.selectamix__route .selectamix__meta,
+.selectamix__detail .selectamix__meta {
+  display: block;
+  color: #52525b;
+  font-size: 0.85em;
+}
+.selectamix__route audio,
+.selectamix__detail audio {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+}
+.selectamix__segue {
+  margin-left: -1rem;
+  padding: 0.25rem 0.5rem;
+  border-left: 3px solid #16a34a;
+  color: #166534;
+  font-size: 0.85em;
+}
+.selectamix__detail {
+  padding: 0.75rem;
+  border: 1px solid #d4d4d8;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+.selectamix__detail:empty {
+  display: none;
+}
+.selectamix__detail h3 {
+  margin-top: 0;
+}
+.selectamix__detail dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+}
+.selectamix__detail dd {
+  margin: 0;
+}
+
+.selectamix__status {
+  min-height: 1.5em;
+  font-variant-numeric: tabular-nums;
+}
+.selectamix__programme {
+  list-style: none;
+  counter-reset: tune;
+  padding-left: 1.75rem;
+}
+.selectamix__programme li {
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+.selectamix__programme li:not(.selectamix__segue) {
+  counter-increment: tune;
+}
+.selectamix__programme li:not(.selectamix__segue)::before {
+  content: counter(tune) ".";
+  position: absolute;
+  left: -1.75rem;
+  width: 1.25rem;
+  text-align: right;
+  font-weight: 600;
+}
+.selectamix__programme .selectamix__meta {
+  display: block;
+  color: #52525b;
+  font-size: 0.85em;
+}
+.selectamix__schedule {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+.selectamix__schedule th,
+.selectamix__schedule td {
+  padding: 0.35rem 0.5rem;
+  border-top: 1px solid #e4e4e7;
+  text-align: left;
+  vertical-align: top;
+}
+.selectamix__schedule th {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  width: 3.5rem;
+}
+.selectamix__schedule .selectamix__meta {
+  display: block;
+  color: #52525b;
+  font-size: 0.85em;
+}
+.selectamix__segue-row td {
+  color: #166534;
+  font-size: 0.9em;
+}
+.selectamix__routes {
+  list-style: none;
+  padding: 0;
+}
+.selectamix__routes-item {
+  padding: 0.75rem 0;
+  border-top: 1px solid #e4e4e7;
+}
+.selectamix__routes-item .selectamix__meta {
+  display: block;
+  color: #52525b;
+  margin: 0.25rem 0 0.5rem;
+}
+
+/* Buttons: self-contained so they look the same in any theme. */
+.selectamix .button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 2px solid #2563eb;
+  border-radius: 0.375rem;
+  background: #fff;
+  color: #2563eb;
+  font: inherit;
+  font-weight: 600;
+  line-height: 1.25;
+  text-decoration: none;
+  cursor: pointer;
+}
+.selectamix .button--primary {
+  background: #2563eb;
+  color: #fff;
+}
+.selectamix .button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.selectamix .button + .button {
+  margin-left: 0.5rem;
+}

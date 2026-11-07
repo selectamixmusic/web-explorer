@@ -1,0 +1,23 @@
+uuid: f527ed4c-2eb9-4393-8867-ff2d31bb4439
+langcode: en
+status: false
+dependencies:
+  module:
+    - search
+  theme:
+    - mercury
+_core:
+  default_config_hash: pbbed0hdqGDF-_QWVVTWRAwgDIotFuAvWH5mWUZu0fA
+id: mercury_search_form_wide
+theme: mercury
+region: content
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: null
+visibility: {  }

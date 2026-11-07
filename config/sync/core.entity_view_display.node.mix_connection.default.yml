@@ -1,0 +1,106 @@
+uuid: eb4e675e-afda-4431-a85f-277c43c955ec
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mix_connection.field_blend_bars
+    - field.field.node.mix_connection.field_fader_curve
+    - field.field.node.mix_connection.field_from_tune
+    - field.field.node.mix_connection.field_in_cue_bar
+    - field.field.node.mix_connection.field_mix_clip
+    - field.field.node.mix_connection.field_notes
+    - field.field.node.mix_connection.field_out_cue_bar
+    - field.field.node.mix_connection.field_tempo_master
+    - field.field.node.mix_connection.field_to_tune
+    - node.type.mix_connection
+  module:
+    - file
+    - options
+    - text
+    - user
+id: node.mix_connection.default
+targetEntityType: node
+bundle: mix_connection
+mode: default
+content:
+  field_blend_bars:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 110
+    region: content
+  field_fader_curve:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_from_tune:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 106
+    region: content
+  field_in_cue_bar:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 109
+    region: content
+  field_mix_clip:
+    type: file_audio
+    label: inline
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_notes:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_out_cue_bar:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 108
+    region: content
+  field_tempo_master:
+    type: list_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_to_tune:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 107
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

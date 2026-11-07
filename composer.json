@@ -17,9 +17,11 @@
     "require": {
         "composer/installers": "^2.3",
         "drupal/core-composer-scaffold": "^11.2",
-        "drupal/core-recipe-unpack": "^11.2",
         "drupal/core-project-message": "^11.2",
-        "drupal/core-recommended": "^11.2"
+        "drupal/core-recipe-unpack": "^11.2",
+        "drupal/core-recommended": "^11.2",
+        "drupal/mercury": "^1.0",
+        "drush/drush": "^13.8"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -35,7 +37,8 @@
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "php-http/discovery": true,
-            "php-tuf/composer-integration": true
+            "php-tuf/composer-integration": true,
+            "symfony/runtime": true
         },
         "sort-packages": true
     },

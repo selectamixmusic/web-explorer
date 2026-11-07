@@ -1,0 +1,49 @@
+selectamix.network:
+  path: '/mix-network'
+  defaults:
+    _controller: '\Drupal\selectamix\Controller\NetworkController::page'
+    _title: 'Mix network'
+  requirements:
+    _permission: 'access content'
+
+selectamix.network_json:
+  path: '/selectamix/network.json'
+  defaults:
+    _controller: '\Drupal\selectamix\Controller\NetworkController::json'
+  requirements:
+    _permission: 'access content'
+
+selectamix.routes:
+  path: '/mix-routes'
+  defaults:
+    _controller: '\Drupal\selectamix\Controller\RouteController::list'
+    _title: 'Mix routes'
+  requirements:
+    _permission: 'access content'
+
+selectamix.route_play:
+  path: '/mix-route/{node}/play'
+  defaults:
+    _controller: '\Drupal\selectamix\Controller\RouteController::play'
+    _title_callback: '\Drupal\selectamix\Controller\RouteController::playTitle'
+  requirements:
+    _permission: 'access content'
+    _entity_access: 'node.view'
+    node: \d+
+  options:
+    parameters:
+      node:
+        type: entity:node
+
+selectamix.route_json:
+  path: '/selectamix/route/{node}/programme.json'
+  defaults:
+    _controller: '\Drupal\selectamix\Controller\RouteController::json'
+  requirements:
+    _permission: 'access content'
+    _entity_access: 'node.view'
+    node: \d+
+  options:
+    parameters:
+      node:
+        type: entity:node

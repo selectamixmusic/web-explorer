@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_isrc
+    - node.type.tune
+id: node.tune.field_isrc
+field_name: field_isrc
+entity_type: node
+bundle: tune
+label: ISRC
+description: 'International Standard Recording Code. Identifies this exact recording across music services.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

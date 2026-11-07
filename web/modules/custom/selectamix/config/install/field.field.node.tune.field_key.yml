@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_key
+    - node.type.tune
+id: node.tune.field_key
+field_name: field_key
+entity_type: node
+bundle: tune
+label: Key
+description: 'Musical key, e.g. Camelot 8A or F minor.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

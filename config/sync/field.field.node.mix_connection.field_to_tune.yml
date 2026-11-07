@@ -1,0 +1,25 @@
+uuid: 9f64d7da-755d-4532-97c1-5291baa55ae5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_to_tune
+    - node.type.mix_connection
+    - node.type.tune
+id: node.mix_connection.field_to_tune
+field_name: field_to_tune
+entity_type: node
+bundle: mix_connection
+label: 'Incoming tune'
+description: 'The tune being mixed into.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      tune: tune
+    auto_create: false
+field_type: entity_reference

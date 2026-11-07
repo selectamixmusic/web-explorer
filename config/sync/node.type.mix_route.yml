@@ -1,0 +1,11 @@
+uuid: 511a48d5-1454-49d1-a18f-dce79ca4ce9e
+langcode: en
+status: true
+dependencies: {  }
+name: 'Mix route'
+type: mix_route
+description: 'An ordered chain of mix connections: a shareable, playable mix.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: false

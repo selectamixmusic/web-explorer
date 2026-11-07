@@ -1,0 +1,131 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.mix_connection.field_blend_bars
+    - field.field.node.mix_connection.field_fader_curve
+    - field.field.node.mix_connection.field_from_tune
+    - field.field.node.mix_connection.field_in_cue_bar
+    - field.field.node.mix_connection.field_mix_clip
+    - field.field.node.mix_connection.field_notes
+    - field.field.node.mix_connection.field_out_cue_bar
+    - field.field.node.mix_connection.field_tempo_master
+    - field.field.node.mix_connection.field_to_tune
+    - node.type.mix_connection
+  module:
+    - file
+    - path
+    - text
+id: node.mix_connection.default
+targetEntityType: node
+bundle: mix_connection
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_blend_bars:
+    type: number
+    weight: 130
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_fader_curve:
+    type: options_select
+    weight: 132
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_from_tune:
+    type: entity_reference_autocomplete
+    weight: 126
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_in_cue_bar:
+    type: number
+    weight: 129
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_mix_clip:
+    type: file_generic
+    weight: 133
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_notes:
+    type: text_textarea
+    weight: 134
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_out_cue_bar:
+    type: number
+    weight: 128
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_tempo_master:
+    type: options_select
+    weight: 131
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_to_tune:
+    type: entity_reference_autocomplete
+    weight: 127
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

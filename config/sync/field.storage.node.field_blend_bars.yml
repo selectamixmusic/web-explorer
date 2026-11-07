@@ -1,0 +1,20 @@
+uuid: 23a6717e-0c9c-4b44-8520-0617fcc143d1
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_blend_bars
+field_name: field_blend_bars
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

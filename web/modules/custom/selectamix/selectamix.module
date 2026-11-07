@@ -1,0 +1,69 @@
+<?php
+
+/**
+ * @file
+ * Selectamix: tune and mix-connection network.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\NodeInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function selectamix_theme($existing, $type, $theme, $path) {
+  return [
+    'selectamix_network' => [
+      'variables' => [
+        'tune_count' => 0,
+        'connection_count' => 0,
+      ],
+    ],
+    'selectamix_routes' => [
+      'variables' => ['routes' => []],
+    ],
+    'selectamix_route_player' => [
+      'variables' => ['route' => NULL, 'programme' => []],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_presave() for node entities.
+ *
+ * A mix connection is named after the tunes it joins, so the title is derived
+ * rather than typed.
+ */
+function selectamix_node_presave(NodeInterface $node) {
+  if ($node->bundle() !== 'mix_connection') {
+    return;
+  }
+  $from = $node->get('field_from_tune')->entity;
+  $to = $node->get('field_to_tune')->entity;
+  if ($from && $to) {
+    $node->setTitle(selectamix_tune_label($from) . ' → ' . selectamix_tune_label($to));
+  }
+}
+
+/**
+ * Implements hook_form_BASE_FORM_ID_alter() for node forms.
+ */
+function selectamix_form_node_form_alter(array &$form, FormStateInterface $form_state) {
+  $node = $form_state->getFormObject()->getEntity();
+  if ($node->bundle() !== 'mix_connection') {
+    return;
+  }
+  if (isset($form['title']['widget'][0]['value'])) {
+    $form['title']['widget'][0]['value']['#required'] = FALSE;
+    $form['title']['widget'][0]['value']['#description'] = t('Generated automatically from the outgoing and incoming tunes on save.');
+  }
+}
+
+/**
+ * Short "Artist – Title (Version)" label for a tune node.
+ */
+function selectamix_tune_label(NodeInterface $tune): string {
+  $label = trim(($tune->get('field_artist')->value ?? '') . ' – ' . $tune->label(), ' –');
+  $version = $tune->get('field_version')->value;
+  return $version ? "$label ($version)" : $label;
+}

@@ -1,0 +1,19 @@
+uuid: eef429e6-1aca-47a4-bb0e-1789e8b21c3a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_musicbrainz_id
+    - node.type.tune
+id: node.tune.field_musicbrainz_id
+field_name: field_musicbrainz_id
+entity_type: node
+bundle: tune
+label: 'MusicBrainz recording ID'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

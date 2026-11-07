@@ -1,0 +1,23 @@
+uuid: accaba5a-f5a8-4b21-bfb9-d0441b7be463
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_tempo_master
+    - node.type.mix_connection
+  module:
+    - options
+id: node.mix_connection.field_tempo_master
+field_name: field_tempo_master
+entity_type: node
+bundle: mix_connection
+label: 'Tempo master'
+description: 'Which tune plays at its native speed. The other is varispeeded to match.'
+required: false
+translatable: true
+default_value:
+  -
+    value: from
+default_value_callback: ''
+settings: {  }
+field_type: list_string

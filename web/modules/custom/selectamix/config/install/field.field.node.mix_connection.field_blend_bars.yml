@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_blend_bars
+    - node.type.mix_connection
+id: node.mix_connection.field_blend_bars
+field_name: field_blend_bars
+entity_type: node
+bundle: mix_connection
+label: 'Blend length (bars)'
+description: ''
+required: false
+translatable: true
+default_value:
+  -
+    value: 8
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

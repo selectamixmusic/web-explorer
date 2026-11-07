@@ -1,0 +1,19 @@
+uuid: 42b259aa-0c29-4187-b0e8-5d3adeea46a4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_artist
+    - node.type.tune
+id: node.tune.field_artist
+field_name: field_artist
+entity_type: node
+bundle: tune
+label: Artist
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

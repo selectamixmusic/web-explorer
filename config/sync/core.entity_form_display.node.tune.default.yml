@@ -1,0 +1,139 @@
+uuid: bd06e952-3be7-4443-b7ed-605c23b7c8d9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tune.field_artist
+    - field.field.node.tune.field_audio
+    - field.field.node.tune.field_bpm
+    - field.field.node.tune.field_duration
+    - field.field.node.tune.field_first_downbeat
+    - field.field.node.tune.field_isrc
+    - field.field.node.tune.field_key
+    - field.field.node.tune.field_musicbrainz_id
+    - field.field.node.tune.field_preview_clip
+    - field.field.node.tune.field_version
+    - node.type.tune
+  module:
+    - file
+    - path
+id: node.tune.default
+targetEntityType: node
+bundle: tune
+mode: default
+content:
+  created:
+    type: datetime_timestamp
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_artist:
+    type: string_textfield
+    weight: 131
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_audio:
+    type: file_generic
+    weight: 139
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_bpm:
+    type: number
+    weight: 133
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_duration:
+    type: number
+    weight: 135
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_first_downbeat:
+    type: number
+    weight: 136
+    region: content
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+  field_isrc:
+    type: string_textfield
+    weight: 137
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_key:
+    type: string_textfield
+    weight: 134
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_musicbrainz_id:
+    type: string_textfield
+    weight: 138
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  field_preview_clip:
+    type: file_generic
+    weight: 140
+    region: content
+    settings:
+      progress_indicator: throbber
+    third_party_settings: {  }
+  field_version:
+    type: string_textfield
+    weight: 132
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  status:
+    type: boolean_checkbox
+    weight: 120
+    region: content
+    settings:
+      display_label: true
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 5
+    region: content
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden:
+  promote: true
+  sticky: true

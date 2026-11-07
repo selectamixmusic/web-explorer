@@ -1,0 +1,129 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.tune.field_artist
+    - field.field.node.tune.field_audio
+    - field.field.node.tune.field_bpm
+    - field.field.node.tune.field_duration
+    - field.field.node.tune.field_first_downbeat
+    - field.field.node.tune.field_isrc
+    - field.field.node.tune.field_key
+    - field.field.node.tune.field_musicbrainz_id
+    - field.field.node.tune.field_preview_clip
+    - field.field.node.tune.field_version
+    - node.type.tune
+  module:
+    - file
+    - user
+id: node.tune.default
+targetEntityType: node
+bundle: tune
+mode: default
+content:
+  field_artist:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_audio:
+    type: file_audio
+    label: inline
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_bpm:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_duration:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 3
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_first_downbeat:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 3
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 116
+    region: content
+  field_isrc:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_key:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_musicbrainz_id:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_preview_clip:
+    type: file_audio
+    label: inline
+    settings:
+      controls: true
+      autoplay: false
+      loop: false
+      multiple_file_display_type: tags
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_version:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

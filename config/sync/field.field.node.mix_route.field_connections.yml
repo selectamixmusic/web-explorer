@@ -1,0 +1,25 @@
+uuid: df0506a8-a526-4bb9-848e-8b2ab54d36d5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_connections
+    - node.type.mix_connection
+    - node.type.mix_route
+id: node.mix_route.field_connections
+field_name: field_connections
+entity_type: node
+bundle: mix_route
+label: Connections
+description: 'In playing order. Each connection must start where the previous one ended.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      mix_connection: mix_connection
+    auto_create: false
+field_type: entity_reference

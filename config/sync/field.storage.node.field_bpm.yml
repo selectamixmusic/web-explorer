@@ -1,0 +1,20 @@
+uuid: 92ce25f9-b9e3-4b66-98cd-eff121a73f15
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_bpm
+field_name: field_bpm
+entity_type: node
+type: decimal
+settings:
+  precision: 6
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

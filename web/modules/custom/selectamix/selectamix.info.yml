@@ -1,0 +1,11 @@
+name: Selectamix
+type: module
+description: 'Tunes as nodes, mix connections as directed edges, explored in a Cytoscape network.'
+package: Selectamix
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:field
+  - drupal:file
+  - drupal:options
+  - drupal:text

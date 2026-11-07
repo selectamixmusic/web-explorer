@@ -1,0 +1,23 @@
+uuid: 66841abc-5461-44f1-9c70-cf1fc5b4c1c3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_first_downbeat
+    - node.type.tune
+id: node.tune.field_first_downbeat
+field_name: field_first_downbeat
+entity_type: node
+bundle: tune
+label: 'First downbeat (seconds)'
+description: 'Offset of beat 1 of bar 1. With BPM this makes every bar position computable.'
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

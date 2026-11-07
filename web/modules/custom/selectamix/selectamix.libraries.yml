@@ -1,0 +1,43 @@
+cytoscape:
+  remote: https://js.cytoscape.org
+  version: 3.30.4
+  license:
+    name: MIT
+    url: https://github.com/cytoscape/cytoscape.js/blob/master/LICENSE
+    gpl-compatible: true
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/cytoscape/3.30.4/cytoscape.min.js: { type: external, minified: true }
+
+player:
+  version: 0.1
+  js:
+    js/selectamix-player.js: {}
+  dependencies:
+    - core/drupal
+
+network:
+  version: 0.1
+  js:
+    js/selectamix-network.js: {}
+  css:
+    theme:
+      css/selectamix-network.css: {}
+  dependencies:
+    - selectamix/cytoscape
+    - selectamix/player
+    - core/drupal
+    - core/drupalSettings
+    - core/once
+
+route_player:
+  version: 0.1
+  js:
+    js/selectamix-route.js: {}
+  css:
+    theme:
+      css/selectamix-network.css: {}
+  dependencies:
+    - selectamix/player
+    - core/drupal
+    - core/drupalSettings
+    - core/once

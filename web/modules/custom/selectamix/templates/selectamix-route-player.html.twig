@@ -1,0 +1,39 @@
+{#
+/**
+ * @file
+ * Player for one mix route.
+ *
+ * Available variables:
+ * - route: the mix_route node.
+ * - programme: tunes in order and the connections between them.
+ */
+#}
+<div class="selectamix selectamix--player" data-selectamix-route-player>
+  <div>
+    <ol class="selectamix__programme">
+      {% for tune in programme.tunes %}
+        {% if loop.index > 1 %}
+          {% set c = programme.connections[loop.index - 2] %}
+          <li class="selectamix__segue">↓
+            {{ 'out at bar @out, in at bar @in, @bars bar blend'|t({'@out': c.outCueBar ?: '?', '@in': c.inCueBar ?: '?', '@bars': c.blendBars ?: '?'}) }}
+          </li>
+        {% endif %}
+        <li>
+          <strong>{{ tune.artist }} – {{ tune.title }}</strong>
+          <span class="selectamix__meta">{{ tune.bpm }} BPM{% if not tune.audioUrl %} · {{ 'no audio file'|t }}{% endif %}</span>
+        </li>
+      {% endfor %}
+    </ol>
+    <p class="selectamix__actions">
+      <button type="button" class="button button--primary" data-selectamix-play>{{ 'Play'|t }}</button>
+      <button type="button" class="button" data-selectamix-stop disabled>{{ 'Stop'|t }}</button>
+    </p>
+    <p class="selectamix__status" data-selectamix-status aria-live="polite"></p>
+    <p><a href="{{ path('selectamix.routes') }}">{{ 'All mix routes'|t }}</a> · <a href="{{ path('entity.node.canonical', {'node': route.id}) }}">{{ 'Edit route'|t }}</a></p>
+  </div>
+  <aside class="selectamix__panel">
+    <h2 class="selectamix__heading">{{ 'Schedule'|t }}</h2>
+    <p class="selectamix__hint">{{ 'Computed from each tune’s BPM and first downbeat. Times are from the start of the mix.'|t }}</p>
+    <div data-selectamix-schedule></div>
+  </aside>
+</div>

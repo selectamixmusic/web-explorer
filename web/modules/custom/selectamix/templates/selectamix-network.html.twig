@@ -1,0 +1,26 @@
+{#
+/**
+ * @file
+ * The mix network explorer: Cytoscape graph plus the current mix route.
+ *
+ * Available variables:
+ * - tune_count: number of tunes in the network.
+ * - connection_count: number of mix connections.
+ */
+#}
+<div class="selectamix" data-selectamix-network>
+  <div class="selectamix__graph" data-selectamix-graph></div>
+  <aside class="selectamix__panel">
+    <h2 class="selectamix__heading">{{ 'Mix route'|t }}</h2>
+    <p class="selectamix__hint">{{ 'Click a tune to start a route, then any tune it can mix into. Click the last tune again to step back. Click a connection to see how the mix is cued.'|t }}</p>
+    <ol class="selectamix__route" data-selectamix-route></ol>
+    <p class="selectamix__actions">
+      <button type="button" class="button button--primary" data-selectamix-play disabled>{{ 'Play route'|t }}</button>
+      <button type="button" class="button" data-selectamix-stop disabled>{{ 'Stop'|t }}</button>
+      <button type="button" class="button" data-selectamix-clear>{{ 'Clear route'|t }}</button>
+    </p>
+    <p class="selectamix__status" data-selectamix-status aria-live="polite"></p>
+    <div class="selectamix__detail" data-selectamix-detail></div>
+    <p class="selectamix__stats">{{ '@tunes tunes, @connections mix connections.'|t({'@tunes': tune_count, '@connections': connection_count}) }} <a href="{{ path('selectamix.routes') }}">{{ 'Saved mix routes'|t }}</a></p>
+  </aside>
+</div>

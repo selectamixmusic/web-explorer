@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * List of mix routes.
+ *
+ * Available variables:
+ * - routes: list of { title, url, play_url, tunes, playable, broken }.
+ */
+#}
+<div class="selectamix selectamix--routes">
+  {% if routes is empty %}
+    <p>{{ 'No mix routes yet.'|t }}</p>
+  {% endif %}
+  <ul class="selectamix__routes">
+    {% for route in routes %}
+      <li class="selectamix__routes-item">
+        <strong><a href="{{ route.url }}">{{ route.title }}</a></strong>
+        {% if route.broken %}
+          <span class="selectamix__meta">{{ 'Connections do not chain.'|t }}</span>
+        {% else %}
+          <span class="selectamix__meta">{{ route.tunes|join(' → ') }}</span>
+          {% if route.playable %}
+            <a class="button" href="{{ route.play_url }}">{{ 'Play'|t }}</a>
+          {% else %}
+            <span class="selectamix__meta">{{ 'Some tunes have no audio file yet.'|t }}</span>
+          {% endif %}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <p><a href="{{ path('selectamix.network') }}">{{ 'Explore the mix network'|t }}</a></p>
+</div>
