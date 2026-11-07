@@ -5,6 +5,8 @@ A Drupal 11 rebuild of the 2000–2001 Java Selectamix client
 human-curated mixes between them are directed edges, and a route through the
 network is a playable mix.
 
+Live at https://selectamixmusic.com (server 04; see `docs/deploy.md`).
+
 ## Local setup (ddev)
 
 ```sh
