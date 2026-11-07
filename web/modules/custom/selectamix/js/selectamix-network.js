@@ -10,7 +10,7 @@
 (function (Drupal, drupalSettings, once) {
   'use strict';
 
-  const COLOURS = {
+  const LIGHT = {
     node: '#e4e4e7',
     nodeBorder: '#a1a1aa',
     selectable: '#dbeafe',
@@ -25,8 +25,48 @@
     edgeCandidate: '#2563eb',
     edgeSelected: '#16a34a',
   };
+  const DARK = {
+    node: '#3f3f46',
+    nodeBorder: '#71717a',
+    selectable: '#1e3a8a',
+    selectableBorder: '#60a5fa',
+    selected: '#14532d',
+    selectedBorder: '#4ade80',
+    unselectable: '#1f1f23',
+    unselectableBorder: '#2e2e33',
+    textMuted: '#52525b',
+    text: '#fafafa',
+    edge: '#71717a',
+    edgeCandidate: '#60a5fa',
+    edgeSelected: '#4ade80',
+  };
 
-  const STYLE = [
+  /**
+   * Picks the palette from the page background so the graph suits any theme.
+   */
+  function pickColours(el) {
+    const probe = el.closest('.selectamix') || document.body;
+    const bg = window.getComputedStyle(probe).backgroundColor || window.getComputedStyle(document.body).backgroundColor;
+    const m = bg && bg.match(/[\d.]+/g);
+    if (!m || m.length < 3 || (m.length > 3 && parseFloat(m[3]) === 0)) {
+      const bodyBg = window.getComputedStyle(document.body).backgroundColor;
+      const b = bodyBg && bodyBg.match(/[\d.]+/g);
+      if (b && b.length >= 3 && !(b.length > 3 && parseFloat(b[3]) === 0)) {
+        return luminance(b) < 0.5 ? DARK : LIGHT;
+      }
+      return LIGHT;
+    }
+    return luminance(m) < 0.5 ? DARK : LIGHT;
+  }
+
+  function luminance(rgb) {
+    return (0.2126 * rgb[0] + 0.7152 * rgb[1] + 0.0722 * rgb[2]) / 255;
+  }
+
+  const COLOURS = {};
+
+  function buildStyle(COLOURS) {
+  return [
     {
       selector: 'node',
       style: {
@@ -103,6 +143,7 @@
       },
     },
   ];
+  }
 
   /**
    * The selection rules, independent of any rendering.
@@ -273,7 +314,7 @@
           data: { id: c.id, source: c.from, target: c.to },
         })),
       ],
-      style: STYLE,
+      style: buildStyle(pickColours(graphEl)),
       layout: { name: 'circle', padding: 40 },
       boxSelectionEnabled: false,
       autounselectify: true,

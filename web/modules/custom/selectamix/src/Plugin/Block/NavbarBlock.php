@@ -59,7 +59,7 @@ class NavbarBlock extends BlockBase implements ContainerFactoryPluginInterface {
     $brandingPlugin = $this->blockManager->createInstance('system_branding_block', [
       'label_display' => '0',
       'use_site_logo' => TRUE,
-      'use_site_name' => TRUE,
+      'use_site_name' => FALSE,
       'use_site_slogan' => FALSE,
     ]);
     // Wrap the plugin output as a block so Mercury's
